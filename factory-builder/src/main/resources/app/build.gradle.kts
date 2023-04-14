@@ -20,5 +20,5 @@ configure<JavaPluginConvention> {
 dependencies {
     implementation(platform("io.qalipsis:qalipsis-platform:@platform.version@"))
 
-    implementation("io.qalipsis:api-dsl")
+    implementation("io.qalipsis:qalipsis-api-dsl")
 }

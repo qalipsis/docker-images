@@ -16,8 +16,8 @@ repositories {
 dependencies {
     implementation(platform("io.qalipsis:qalipsis-platform:$platformVersion"))
 
-    implementation("io.qalipsis:runtime")
-    implementation("io.qalipsis:head")
+    implementation("io.qalipsis:qalipsis-runtime")
+    implementation("io.qalipsis:qalipsis-head")
 
     runtimeOnly("net.logstash.logback:logstash-logback-encoder:7.2")
 }

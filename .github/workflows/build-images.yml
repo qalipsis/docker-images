@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.PROPRIETARY_DOCKER_USERNAME }}
           password: ${{ secrets.PROPRIETARY_DOCKER_PASSWORD }}
 
-      - name: Build and publish the Docker running images
+      - name: Build and publish the Docker running images for the head, factory and standalone
         run: ./gradlew build :head:dockerPush :factory:dockerPush :standalone:dockerPush
 
       - name: Prepare the files for the Docker factory builder images
