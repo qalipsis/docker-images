@@ -16,7 +16,7 @@ tasks {
     val replacedPropertiesInResources = mapOf(
         "kotlin.version" to kotlinVersion,
         "platform.version" to platformVersion,
-        "image.name" to "qfagebzx.gra7.container-registry.ovh.net/oss/${project.name}:${project.version}",
+        "image.name" to "zakd79ka.gra7.container-registry.ovh.net/oss/${project.name}:${project.version}",
         "docker.folder" to project.file("build/docker").absolutePath
     )
 
@@ -34,7 +34,7 @@ tasks {
 }
 
 docker {
-    name = "qfagebzx.gra7.container-registry.ovh.net/oss/${project.name}:${project.version}"
+    name = "zakd79ka.gra7.container-registry.ovh.net/oss/${project.name}:${project.version}"
     tag("latest", project.version as String)
 
     setDockerfile(project.file("src/main/docker/Dockerfile"))

@@ -23,7 +23,7 @@ dependencies {
 }
 
 docker {
-    name = "qfagebzx.gra7.container-registry.ovh.net/oss/${project.name}:${platformVersion.toLowerCase()}"
+    name = "zakd79ka.gra7.container-registry.ovh.net/oss/${project.name}:${platformVersion.toLowerCase()}"
 
     setDockerfile(project.file("src/main/docker/Dockerfile"))
 

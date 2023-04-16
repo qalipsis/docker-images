@@ -17,7 +17,7 @@ jobs:
       - name: Login to QALIPSIS private registry
         uses: docker/login-action@v2
         with:
-          registry: qfagebzx.gra7.container-registry.ovh.net
+          registry: zakd79ka.gra7.container-registry.ovh.net
           username: ${{ secrets.PROPRIETARY_DOCKER_USERNAME }}
           password: ${{ secrets.PROPRIETARY_DOCKER_PASSWORD }}
 
