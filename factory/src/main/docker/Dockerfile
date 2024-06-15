@@ -1,4 +1,4 @@
-FROM openjdk:13
+FROM --platform=$TARGETPLATFORM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 

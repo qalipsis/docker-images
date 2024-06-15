@@ -1,4 +1,4 @@
-FROM gradle:7-jdk11
+FROM --platform=$TARGETPLATFORM gradle:8-jdk17-jammy
 
 RUN mkdir -p /usr/pre-app
 WORKDIR /usr/pre-app
