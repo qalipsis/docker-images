@@ -2,12 +2,9 @@ FROM --platform=$TARGETPLATFORM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-ENV TINI_VERSION v0.19.0
+RUN apk add --no-cache tini
 
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin/tini
-RUN chmod +x /sbin/tini
-
-RUN mkdir -p /app/libs /app/scenario-libs /app/logs /app/config
+RUN mkdir -p /app/libs /app/logs /app/config
 ADD libs /app/libs
 
 RUN chmod -R 777 /app
@@ -15,9 +12,9 @@ RUN chmod -R 777 /app
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-EXPOSE 8080 8443
+EXPOSE 8080
 
-ENV JVM_ARGS "-Xms64m -Xmx1024m"
+ENV JVM_ARGS "-Xms64m -Xmx512m"
 ENV LOG_PATH /app/logs
 ENV MIN_FLAT_FILE_LOG_LEVEL ALL
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]

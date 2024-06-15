@@ -37,8 +37,12 @@ docker {
     name = "zakd79ka.gra7.container-registry.ovh.net/oss/${project.name}:${project.version}"
     tag("latest", project.version as String)
 
-    platform("linux/amd64", "linux/arm64")
+    if (System.getenv("GITHUB_ACTIONS") != "true") {
+        platform("linux/amd64", "linux/arm64")
+    }
     buildx(true)
     setDockerfile(project.file("src/main/docker/Dockerfile"))
     files((tasks["processResources"] as ProcessResources).outputs)
+    noCache(true)
+    push(true)
 }

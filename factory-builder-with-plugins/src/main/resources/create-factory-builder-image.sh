@@ -17,5 +17,4 @@
 #
 
 set DOCKER_BUILDKIT=0
-docker build --no-cache -t @image.name@ @docker.folder@
-docker push @image.name@
+docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push --tag @image.name@ @docker.folder@

@@ -32,6 +32,7 @@ docker {
     buildx(true)
     files((tasks["processResources"] as ProcessResources).outputs, File(project.buildDir, "classpath"))
     noCache(true)
+    push(true)
 }
 
 tasks {
