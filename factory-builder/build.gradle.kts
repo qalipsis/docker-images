@@ -44,5 +44,5 @@ docker {
     setDockerfile(project.file("src/main/docker/Dockerfile"))
     files((tasks["processResources"] as ProcessResources).outputs)
     noCache(true)
-    push(true)
+    load(true)
 }

@@ -28,11 +28,13 @@ docker {
 
     setDockerfile(project.file("src/main/docker/Dockerfile"))
 
-    platform("linux/amd64", "linux/arm64")
+    if (System.getenv("GITHUB_ACTIONS") != "true") {
+        platform("linux/amd64", "linux/arm64")
+    }
     buildx(true)
     files((tasks["processResources"] as ProcessResources).outputs, File(project.buildDir, "classpath"))
     noCache(true)
-    push(true)
+    load(true)
 }
 
 tasks {

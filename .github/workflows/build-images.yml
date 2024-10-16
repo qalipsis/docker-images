@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.PROPRIETARY_DOCKER_PASSWORD }}
 
       - name: Build and publish the Docker running images for the head, factory and standalone
-        run: ./gradlew build :head:dockerPush :factory:dockerPush :standalone:dockerPush
+        run: ./gradlew clean :head:dockerPush :factory:dockerPush :standalone:dockerPush
 
       - name: Prepare the files for the Docker factory builder images
         run: ./gradlew :factory-builder:dockerPrepare :factory-builder-with-plugins:dockerPrepare
